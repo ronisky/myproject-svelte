@@ -10,6 +10,7 @@
     // console.log(id);
     people = people.filter((person) => person.id != id);
   };
+  let num = 6;
 </script>
 
 <style>
@@ -34,6 +35,13 @@
   }
 </style>
 
+{#if num > 20}
+  <p>Greater than 20</p>
+{:else if num > 5}
+  <p>Greater than 5</p>
+{:else}
+  <p>Not greater than 5</p>
+{/if}
 <main>
   <!-- <div>
     <h4>{people[0].name}</h4>
@@ -50,6 +58,9 @@
   {#each people as person (person.id)}
     <div>
       <h4>{person.name}</h4>
+      {#if person.beltColour === 'black'}
+        <p><strong>Pesantech ID</strong></p>
+      {/if}
       <p>{person.age} years old, {person.beltColour} belt.</p>
       <button
         on:click={() => {
