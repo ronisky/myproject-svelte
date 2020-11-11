@@ -1,21 +1,9 @@
 <script>
-  let firstName = "Roni";
-  let lastName = "Setiawan";
-  let beltColour = "black";
-
-  $: fullName = `${firstName} ${lastName}`;
-  $: {
-    console.log(beltColour);
-    console.log(fullName);
-  }
-
-  const handleClick = () => {
-    beltColour = "orange";
-  };
-
-  const handleInput = (e) => {
-    beltColour = e.target.value;
-  };
+  let people = [
+    { name: "roni", beltColour: "black", age: 20, id: 1 },
+    { name: "rona", beltColour: "orange", age: 21, id: 2 },
+    { name: "kaka", beltColour: "blue", age: 22, id: 3 },
+  ];
 </script>
 
 <style>
@@ -41,12 +29,24 @@
 </style>
 
 <main>
-  <!-- <h1>Hello {name}!</h1> -->
-  <!-- <p>{firstName}{lastName}-{beltColour} blet</p> -->
-  <p>{fullName}-{beltColour} blet</p>
-  <!-- <button on:click={handleClick}>update belt colour</button> -->
-  <!-- <input type="text" on:input={handleInput} value={beltColour} /> -->
-  <input type="text" bind:value={firstName} />
-  <input type="text" bind:value={lastName} />
-  <input type="text" bind:value={beltColour} />
+  <!-- <div>
+    <h4>{people[0].name}</h4>
+    <p>{people[0].beltColour}</p>
+  </div>
+  <div>
+    <h4>{people[1].name}</h4>
+    <p>{people[1].beltColour}</p>
+  </div>
+  <div>
+    <h4>{people[2].name}</h4>
+    <p>{people[2].beltColour}</p>
+  </div> -->
+  {#each people as person (person.id)}
+    <div>
+      <h4>{person.name}</h4>
+      <p>{person.age} years old, {person.beltColour} belt.</p>
+    </div>
+  {:else}
+    <p>There are no people to show...</p>
+  {/each}
 </main>
