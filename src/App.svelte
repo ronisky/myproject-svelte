@@ -45,7 +45,8 @@
   <p>Not greater than 5</p>
 {/if} -->
 
-<Modal />
+<!-- <Modal message="Hey, I am PesantechID a prop value " isPromo={true} /> -->
+<Modal message="Hey, I am PesantechID a prop value again" />
 
 <main>
   <!-- <div>
