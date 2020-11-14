@@ -51,10 +51,21 @@
 {/if} -->
 
 <!-- <Modal message="Hey, I am PesantechID a prop value " isPromo={true} /> -->
-<Modal
+<!-- <Modal
   message="Hey, I am PesantechID a prop value again"
   {showModal}
-  on:click={toggleModal} />
+  on:click={toggleModal} /> -->
+<Modal {showModal} on:click={toggleModal}>
+  <h3>Add a new person</h3>
+  <form action="">
+    <input type="text" placeholder="name" />
+    <input type="text" placeholder="belt colour" />
+    <button>Add Person</button>
+  </form>
+  <!-- <div slot="title">
+    <h3>Add a new person</h3>
+  </div> -->
+</Modal>
 
 <main>
   <button on:click|once={toggleModal}>Open Modal</button>
