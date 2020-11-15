@@ -18,7 +18,15 @@
     // console.log(id);
     people = people.filter((person) => person.id != id);
   };
-  let num = 6;
+
+  // let num = 6;
+
+  const addPerson = (e) => {
+    // console.log(e.detail);
+    const person = e.detail;
+    people = [person, ...people];
+    showModal = false;
+  };
 </script>
 
 <style>
@@ -66,7 +74,7 @@
   <!-- <div slot="title">
     <h3>Add a new person</h3>
   </div> -->
-  <AddPersonForm />
+  <AddPersonForm on:addPerson={addPerson} />
 </Modal>
 
 <main>
