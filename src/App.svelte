@@ -78,7 +78,7 @@
 </Modal>
 
 <main>
-  <button on:click|once={toggleModal}>Open Modal</button>
+  <button on:click={toggleModal}>Open Modal</button>
   <!-- <div>
     <h4>{people[0].name}</h4>
     <p>{people[0].beltColour}</p>
